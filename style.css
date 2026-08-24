@@ -140,7 +140,7 @@ footer.site-footer {
   letter-spacing: 0.2px;
 }
 
-.hero p.lead {
+. p.lead {
   max-width: 620px;
   margin: 0 auto 26px;
   color: var(--muted);
@@ -521,6 +521,7 @@ tbody tr:last-child td { border-bottom: none; }
   .form-row-2 { grid-template-columns: 1fr; }
   table { min-width: 520px; }
 }
+rgin-top: 8px;
 .hero-brand {
   display: flex;
   align-items: center;
@@ -529,17 +530,31 @@ tbody tr:last-child td { border-bottom: none; }
   margin-bottom: 25px;
 }
 
-.hero-brand img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
+.hero-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
   flex-shrink: 0;
+  border: 4px solid var(--accent);
+  box-shadow: var(--shadow);
 }
 
-.hero-brand h1 {
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-text h1 {
+  margin: 0 0 8px;
+}
+
+.hero-text .lead {
   margin: 0;
-}
-
-.hero-brand .lead {
-  margin-top: 8px;
 }
