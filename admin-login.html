@@ -60,7 +60,7 @@ document.getElementById("admin-login-form").addEventListener("submit", async (e)
     return;
   }
 
-  const profile = await getProfile(data.user.id);
+  const profile = await ensureProfile(data.user);
 
   if (!profile || profile.role !== "admin") {
     showMessage(msgEl, "This account does not have admin access.", "error");
