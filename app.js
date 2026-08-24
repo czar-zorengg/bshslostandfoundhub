@@ -156,15 +156,13 @@ async function renderNav(activePage) {
 
   container.innerHTML = `
     <div class="nav-inner">
-      <a class="brand" href="index.html">BSHS LOST AND FOUND HUB</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <a class="brand" href="index.html">
+        <img src="group-logo.jpg" alt="" class="brand-logo" onerror="this.style.display='none'" />
+        BSHS LOST AND FOUND HUB
+      </a>
       <nav class="nav-links" id="nav-links">${linksHtml}</nav>
     </div>
   `;
-
-  document.getElementById("nav-toggle")?.addEventListener("click", () => {
-    document.getElementById("nav-links")?.classList.toggle("open");
-  });
 
   document.getElementById("logout-link")?.addEventListener("click", (e) => {
     e.preventDefault();
