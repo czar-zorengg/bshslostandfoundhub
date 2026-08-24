@@ -98,6 +98,16 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     return;
   }
 
+  // Supabase deliberately returns a "success" response (no error) when you
+  // sign up with an email that's already registered, to avoid leaking which
+  // emails exist. An empty identities array is the tell that this happened.
+  if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+    showMessage(msgEl, "This email is already registered. Please log in instead.", "error");
+    btn.disabled = false;
+    btn.textContent = "Create Account";
+    return;
+  }
+
   // Save name/student ID temporarily on this device so the profile row
   // can be completed as soon as we have an authenticated session
   // (immediately, or on first login if email confirmation is required).
