@@ -529,20 +529,21 @@ rgin-top: 8px;
   gap: 20px;
   margin-bottom: 25px;
 }
-
 .hero-logo {
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 4px solid var(--accent);
-  box-shadow: var(--shadow);
+  border: 6px solid var(--primary);
+  box-shadow: 0 4px 16px rgba(18, 58, 117, 0.20);
+  background: #fff;
 }
 
 .hero-logo img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center;
 }
@@ -558,3 +559,16 @@ rgin-top: 8px;
 .hero-text .lead {
   margin: 0;
 }
+  .hero-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-logo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
