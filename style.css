@@ -521,4 +521,25 @@ tbody tr:last-child td { border-bottom: none; }
   .form-row-2 { grid-template-columns: 1fr; }
   table { min-width: 520px; }
 }
+.hero-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
 
+.hero-brand img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.hero-brand h1 {
+  margin: 0;
+}
+
+.hero-brand .lead {
+  margin-top: 8px;
+}
