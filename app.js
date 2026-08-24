@@ -114,7 +114,9 @@ async function ensureProfile(user) {
     role: "student"
   };
 
-  const { error } = await supabaseClient.from("users").insert([row]);
+  const { error } = await supabaseClient
+    .from("users")
+    .upsert([row], { onConflict: "id", ignoreDuplicates: true });
   if (error) {
     console.error("SUPABASE ENSURE PROFILE ERROR:", error);
     return null;
