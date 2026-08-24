@@ -131,22 +131,6 @@ async function loadStats() {
   document.getElementById("stat-claimed").textContent = row.claimed_items ?? 0;
 }
 render("index.html");
-
-function addGroupLogo() {
-  const nav = document.getElementById("nav-container");
-
-  if (!nav) return;
-
-  const logo = document.createElement("img");
-  logo.src = "group-logo.jpg";
-  logo.alt = "BSHS Lost and Found Hub";
-  logo.className = "group-logo";
-
-  nav.prepend(logo);
-}
-
-addGroupLogo();
-
 loadRecentItems();
 loadStats();
 </script>
