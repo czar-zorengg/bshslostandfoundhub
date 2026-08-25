@@ -96,7 +96,13 @@ async function init() {
 
   if (session) {
     currentUser = session.user;
-    await ensureProfile(currentUser);
+    const profile = await ensureProfile(currentUser);
+    if (!profile) {
+      const msgEl = document.getElementById("report-form-message");
+      showMessage(msgEl, "We couldn't verify your account profile. Please log out and log back in, then try again.", "error");
+      document.getElementById("report-submit-btn").disabled = true;
+      return;
+    }
   } else {
     document.getElementById("guest-note").style.display = "block";
     document.getElementById("guest-fields").style.display = "block";
