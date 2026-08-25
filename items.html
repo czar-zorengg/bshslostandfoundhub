@@ -129,6 +129,10 @@ async function openClaimModal(reportId, itemName) {
     return;
   }
   const profile = await ensureProfile(session.user);
+  if (!profile) {
+    alert("We couldn't verify your account profile. Please log out and log back in, then try again.");
+    return;
+  }
   activeReportId = reportId;
   document.getElementById("claim-item-name").textContent = "Item: " + itemName;
   document.getElementById("claim-name").value = profile?.full_name || session.user.email;
